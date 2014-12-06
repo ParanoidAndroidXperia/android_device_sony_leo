@@ -21,7 +21,10 @@ $(call inherit-product-if-exists, device/sony/shinano/device.mk)
 $(call inherit-product-if-exists, vendor/sony/leo/leo-vendor.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)
-#$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4354/device-bcm.mk)
+
+# Device specific part for two-stage boot
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/recovery/etc/bootrec-device:recovery/etc/bootrec-device
 
 PRODUCT_COPY_FILES += \
     device/sony/leo/rootdir/logo.rle:root/logo.rle \
@@ -67,7 +70,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_NAME := aosp_d6603
 PRODUCT_DEVICE := leo
 PRODUCT_BRAND := Sony
-PRODUCT_MODEL := Xperia Z3 (AOSP)
+PRODUCT_MODEL := Xperia Z3
 PRODUCT_LOCALES += xxhdpi xhdpi hdpi
 PRODUCT_MANUFACTURER := Sony
 
