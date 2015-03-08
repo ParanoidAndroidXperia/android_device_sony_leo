@@ -16,6 +16,19 @@ include device/sony/shinano/BoardConfig.mk
 
 TARGET_BOOTLOADER_BOARD_NAME := D6603
 
+TARGET_ARCH := arm
+TARGET_ARCH_VARIANT := armv7-a-neon
+TARGET_BOARD_PLATFORM = msm8974
+TARGET_CPU_ABI := armeabi-v7a
+TARGET_CPU_ABI2 := armeabi
+TARGET_CPU_VARIANT := krait
+TARGET_CPU_SMP := true
+TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
+TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
+TARGET_NO_RADIOIMAGE := true
+TARGET_NO_RECOVERY := false
+TARGET_NO_KERNEL := false
+
 #Reserve space for data encryption (12656259072-16384)
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 12656242688
 
